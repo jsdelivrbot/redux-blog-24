@@ -8,7 +8,6 @@
 /tmp
 
 # dependencies
-/node_modules
 /bower_components
 
 # misc
@@ -100,11 +99,6 @@ Thumbs.db
 zeus.json
 custom_plan.rb
 
-# NODE
-.node_modules
-node_modules
-*/node_modules
-/node_modules/*
 
 # SYMFONY
 /web/bundles/
