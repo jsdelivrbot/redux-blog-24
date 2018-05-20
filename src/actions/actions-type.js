@@ -1,0 +1,4 @@
+export const FETCH_POSTS = "FETCH_POSTS";
+export const ERROR_FETCH_POSTS = "ERROR_FETCH_POSTS";
+export const DELETE_FETCH_POSTS = "DELETE_FETCH_POSTS";
+export const ACTIVE_POST = "ACTIVE_POST";
