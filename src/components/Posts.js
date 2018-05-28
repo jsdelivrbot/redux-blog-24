@@ -18,7 +18,6 @@ class Posts extends Component {
   }
   render() {
     const { posts, delete_fetch_posts } = this.props;
-    console.log(posts);
     if (!posts) {
       return (
         <div>
