@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { autoComplete } from "./../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import ResultSearch from "./resultSearch";
 class SearchPost extends Component {
   constructor(props) {
     super(props);
@@ -42,10 +43,8 @@ class SearchPost extends Component {
               {search
                 ? search.map(post => {
                     return (
-                      <div>
-                        <Link to={`/post/${post.id}`} key={post.id}>
-                          {post.title}
-                        </Link>
+                      <div key={post.id}>
+                        <ResultSearch post={post} />
                       </div>
                     );
                   })
