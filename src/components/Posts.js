@@ -5,25 +5,11 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 
 class Posts extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: false
-    };
-  }
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetch_posts();
   }
   deletePost(post) {
-    this.setState({
-      isLoading: true
-    });
     this.props.delete_fetch_posts(post.id);
-    setInterval(() => {
-      this.setState({
-        isLoading: false
-      });
-    }, 800);
   }
   renderLengthPosts(posts) {
     if (posts) {
@@ -32,8 +18,8 @@ class Posts extends Component {
   }
   render() {
     const { posts, delete_fetch_posts } = this.props;
-    const { isLoading } = this.state;
-    if (!posts || isLoading) {
+    console.log(posts);
+    if (!posts) {
       return (
         <div>
           <h1>LOADING....</h1>
@@ -42,18 +28,16 @@ class Posts extends Component {
     }
     return (
       <div>
-        {posts
-          ? posts.map(post => {
-              return (
-                <div key={post.id}>
-                  <Link to={`/post/${post.id}`}>{post.title}</Link>
-                  <button onClick={() => this.deletePost(post)}>
-                    Supprimer
-                  </button>
-                </div>
-              );
-            })
-          : null}
+        <Link to="/createpost">Créer un nouveau post ?</Link>
+        <Link to="/search">Search a post</Link>
+        {posts.map(post => {
+          return (
+            <div key={post.id}>
+              <Link to={`/post/${post.id}`}>{post.title}</Link>
+              <button onClick={() => this.deletePost(post)}>Supprimer</button>
+            </div>
+          );
+        })}
         {this.renderLengthPosts(posts)}
       </div>
     );

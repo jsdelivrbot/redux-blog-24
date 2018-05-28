@@ -5,8 +5,9 @@
   "main": "index.js",
   "repository": "",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 3000",
-    "heroku-postbuid": "cross-env NODE_ENV=production WEBPACK_CONFIG=browser_prod,server_prod webpack --colors"
+    "start":
+      "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 3001",
+    "server": "json-server --watch db.json"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-preset-stage-1": "^6.1.18",
+    "json-server": "^0.12.2",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -29,6 +31,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.0.4",
-    "redux-thunk": "^2.2.0"
+    "redux-form": "^7.3.0",
+    "redux-thunk": "^2.2.0",
+    "uid": "0.0.2"
   }
 }
